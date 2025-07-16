@@ -1,9 +1,4 @@
-server:
-  port: 8080
-
 spring:
-  application:
-    name: api-gateway
   cloud:
     gateway:
       discovery:
@@ -17,5 +12,3 @@ spring:
             - Path=/product-service/api/products/**
           filters:
             - StripPrefix=1
-  
-
