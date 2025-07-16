@@ -15,4 +15,6 @@ spring:
             - Path=/product-service/api/products/**
           filters:
             - StripPrefix=1
+  application:
+    name: api-gateway
 
