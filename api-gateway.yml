@@ -6,9 +6,9 @@ spring:
           enabled: true
           lower-case-service-id: true
       routes:
-        - id: product-service
-          uri: lb://product-service
-          predicates:
-            - Path=/product-service/api/products/**
-          filters:
-            - StripPrefix=1
+      - id: product-service
+        uri: lb://product-service
+        predicates:
+        - Path=/api/products/**
+        filters:
+        - StripPrefix=2
