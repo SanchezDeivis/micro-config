@@ -1,32 +1,19 @@
 spring:
   application:
     name: api-gateway
+
   cloud:
     gateway:
-      routes:
-        - id: product-service
-          uri: lb://product-service  # Utiliza el balanceador de carga para enrutar a product-service
-          predicates:
-            - Path=/products/**  # Define la ruta para enrutar las solicitudes a product-service
-  eureka:
-    client:
-      service-url:
-        defaultZone: http://localhost:8761/eureka/
-server:
-  port: 8080  # Configura el puerto en el que se ejecutará el API Gateway
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+  
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
 
-# spring:
-#   cloud:
-#     gateway:
-#       discovery:
-#         locator:
-#           enabled: true
-#           lower-case-service-id: true
-#       routes:
-#       - id: product-service
-#         uri: lb://product-service
-#         predicates:
-#         - Path=/api/products/**
-#         filters:
-#         - StripPrefix=2
+server:
+  port: 8080
 
