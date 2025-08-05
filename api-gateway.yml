@@ -1,11 +1,13 @@
-# api-gateway.yml
-
 server:
   port: 8080
 
 spring:
   application:
     name: api-gateway
+  main:
+    web-application-type: reactive
+  cache:
+    type: caffeine
   cloud:
     gateway:
       routes:
@@ -32,3 +34,14 @@ spring:
           # Configuración de clientes OAuth2 si aplica
         provider:
           # Configuración de proveedor OAuth2 si aplica
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    org.springframework.cloud.netflix.eureka: DEBUG
