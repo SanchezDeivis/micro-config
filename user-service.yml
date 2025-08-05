@@ -15,6 +15,11 @@ spring:
     show-sql: true
     database-platform: org.hibernate.dialect.H2Dialect
 
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
 spring:
   security:
     oauth2:
