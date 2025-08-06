@@ -6,10 +6,12 @@ spring:
     name: api-gateway
   main:
     web-application-type: reactive
-  cache:
-    type: caffeine
   cloud:
     gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
       routes:
         - id: product-service
           uri: lb://product-service
@@ -27,13 +29,13 @@ spring:
           uri: lb://user-service
           predicates:
             - Path=/api/users/**
-  security:
-    oauth2:
-      client:
-        registration:
-          # Configuración de clientes OAuth2 si aplica
-        provider:
-          # Configuración de proveedor OAuth2 si aplica
+  cache:
+    type: caffeine
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
 
 management:
   endpoints:
