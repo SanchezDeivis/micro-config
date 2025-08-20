@@ -53,6 +53,7 @@ management:
       show-details: always
 
 
+
 # logging:
 #   level:
 #     org.springframework.cloud.gateway: DEBUG
