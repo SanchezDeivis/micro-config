@@ -1,20 +1,20 @@
-# application.yml - Configuración común
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka
-    register-with-eureka: true
-    fetch-registry: true
+# # application.yml - Configuración común
+# eureka:
+#   client:
+#     service-url:
+#       defaultZone: http://localhost:8761/eureka
+#     register-with-eureka: true
+#     fetch-registry: true
 
-spring:
-  profiles:
-    active: default
+# spring:
+#   profiles:
+#     active: default
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: '*'
-  endpoint:
-    health:
-      show-details: always
+# management:
+#   endpoints:
+#     web:
+#       exposure:
+#         include: '*'
+#   endpoint:
+#     health:
+#       show-details: always
