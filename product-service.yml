@@ -23,6 +23,9 @@ management:
   endpoint:
     health:
       show-details: always
+  gateway:
+    enabled: true
+
 # spring:
 #   application:
 #     name: product-service
