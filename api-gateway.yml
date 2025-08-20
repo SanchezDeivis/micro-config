@@ -21,20 +21,20 @@ spring:
               uri: lb://inventory-service
               predicates:
                 - Path=/api/inventory/**
-              filters:
-                - StripPrefix=2
+              # filters:
+              #   - StripPrefix=2
             - id: order-service
               uri: lb://order-service
               predicates:
                 - Path=/api/orders/**
-              filters:
-                - StripPrefix=2
+              # filters:
+              #   - StripPrefix=2
             - id: user-service
               uri: lb://user-service
               predicates:
                 - Path=/api/users/**
-              filters:
-                - StripPrefix=2
+              # filters:
+              #   - StripPrefix=2
   cache:
     type: caffeine
 
